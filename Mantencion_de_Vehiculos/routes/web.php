@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Se accede a la ruta de la plantilla
 Route::get('/', function () {
-    return view('welcome');
+    return view('plantilla');
 });
