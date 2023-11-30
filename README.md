@@ -39,7 +39,7 @@ En la siguiente tabla se presentan las operaciones del CRUD respecto al usuario,
       </tr>
   </tbody>
 </table>
-Para estas operaciones no es necesario tener alguna consideración especial, solamente en el delete que se implementa como es mencionado (*soft deleting*).
+Para estas operaciones no es necesario tener alguna consideración especial, solamente en el delete que se implementa como es mencionado (soft deleting).
 
 ## Operaciones del CRUD para Vehículo
 
@@ -73,4 +73,7 @@ En la siguiente tabla se presentan las operaciones del CRUD respecto al vehícul
       </tr>
   </tbody>
 </table>
-Para poder crear un vehículo se recuerda que se debe indicar un usario válido, puesto que es un parámetro requerido. Además, se implementa DELETE como es mencionado (*soft deleting*).
+Para poder crear un vehículo se recuerda que se debe indicar un usario válido, puesto que es un parámetro requerido. Además, se implementa DELETE como es mencionado (soft deleting).
+
+## Consideraciones adicionales
+
