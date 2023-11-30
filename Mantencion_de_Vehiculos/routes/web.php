@@ -35,7 +35,7 @@ Route::get('/Usuario-GET', function () {
 
 // Se accede a la eliminación de usuarios
 Route::get('/Usuario-DELETE', function () {
-    return view('Usuario.Crear_Usuario');
+    return view('Usuario.Borrar_Usuario');
 });
 
 // Se accede a la creación de vehiculos
@@ -55,7 +55,7 @@ Route::get('/Vehiculo-GET', function () {
 
 // Se accede a la eliminación de vehiculos
 Route::get('/Vehiculo-DELETE', function () {
-    return view('Vehiculo.Crear_Vehiculo');
+    return view('Vehiculo.Borrar_Vehiculo');
 });
 
 // Se accede al historial de dueños

@@ -13,14 +13,8 @@
         .titles{
             text-align: center;
         }
-        .columnas{
-            display: flex;
-            flex-direction: column;
-        }
-        .contenedor{
-            align-content: center;
-            padding: 20px;
-            align-self: center;
+        .negrita{
+            font-weight: bold;
         }
     </style>
 </head>
