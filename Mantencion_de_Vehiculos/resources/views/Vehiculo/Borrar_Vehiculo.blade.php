@@ -2,17 +2,17 @@
 
 @section('contenido')
 
-<div class="mb-3">
-    <label for="nombre-usuario" class="form-label">Nombre de Marca</label>
-    <textarea class="form-control" id="nombre-usuario" rows="1"></textarea>
-</div>
-<div class="mb-3">
-    <label for="apellidos-usuario" class="form-label">Apellidos</label>
-    <textarea class="form-control" id="apellidos-usuario" rows="1"></textarea>
-</div>
-<div class="mb-3">
-    <label for="correo-usuario" class="form-label">Correo de Contacto</label>
-    <input type="email" class="form-control" id="correo-usuario" placeholder="name@example.com">
+<div class="container" style="align-content: center; padding: 20px;">
+    <h3 class="titles">En este apartado podrás borrar un usuario conociendo su id</h3>
+    <br>
+    <!-- Aquí va la acción del php para recolectar datos-->
+    <form action="/">
+        <div class="mb-3"style="width: 30%;">
+            <label for="id-vehiculo" class="form-label negrita">Identificador del vehículo</label>
+            <input type="number" class="form-control" id="id-vehiculo" rows="1" maxlength="6" placeholder="1" required>
+        </div>
+        <input type="submit" value="Borrar Vehículo">
+    </form>
 </div>
 
 @endsection

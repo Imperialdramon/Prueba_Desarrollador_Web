@@ -3,26 +3,48 @@
 @section('contenido')
 
 <div class="container" style="align-content: center; padding: 20px;">
-    <h3 class="titles">En este apartado podrás registrar un vehiculo</h3>
+    <h3 class="titles">En este apartado podrás registrar un vehículo</h3>
     <br>
     <!-- Aquí va la acción del php para recolectar datos-->
     <form action="/">
         <div class="container" style="justify-content: center; width: 90%;">
             <div class="mb-3" style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div style="width: 35%;">
-                    <label for="nombre-usuario" class="form-label negrita">Nombre de Usuario</label>
-                    <input type="text" class="form-control" id="nombre-usuario" rows="1" maxlength="30" placeholder="Nombre" required>
+                <div style="width: 30%;">
+                    <label for="marca-vehiculo" class="form-label negrita">Elige una marca</label>
+                    <select id="marca-vehiculo" class="form-control" required>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Ford">Ford</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Mercedes-Benz">Mercedes-Benz</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Tesla">Tesla</option>
+                    </select>
                 </div>
-                <div style="width: 60%;">
-                    <label for="apellidos-usuario" class="form-label negrita">Apellidos del Usuario</label>
-                    <input type="text" class="form-control" id="apellidos-usuario" rows="1" maxlength="70" placeholder="Apellido1 Apellido2" required>
+
+                <div style="width: 40%;">
+                    <label for="modelo-vehiculo" class="form-label negrita">Modelo del Vehículo</label>
+                    <input type="text" class="form-control" id="modelo-vehiculo" rows="1" maxlength="40" placeholder="Model S" required>
+                </div>
+                <div style="width: 20%;">
+                    <label for="year-vehiculo" class="form-label negrita">Año del Vehículo</label>
+                    <input type="number" class="form-control" id="year-vehiculo" rows="1" max="2023" placeholder="2023" required>
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="correo-usuario" class="form-label negrita">Correo de Contacto</label>
-                <input type="email" class="form-control" id="correo-usuario" placeholder="name@example.com" required>
+            <div class="mb-3" style="display: flex; flex-direction: row; justify-content: space-between;">
+                <div style="width: 50%;">
+                    <label for="precio-vehiculo" class="form-label negrita">Precio del Vehículo</label>
+                    <input type="number" class="form-control" id="precio-vehiculo" rows="1" max="100000000" placeholder="10000000" required>
+                </div>
+                <div style="width: 20%;">
+                    <label for="dueno-vehiculo" class="form-label negrita">Id del Dueño</label>
+                    <input type="number" class="form-control" id="dueno-vehiculo" rows="1" max="300" placeholder="1" required>
+                </div>
             </div>
-            <input type="submit" value="Crear Usuario">
+            <input type="submit" value="Crear Vehículo">
         </div>
     </form>
 </div>
