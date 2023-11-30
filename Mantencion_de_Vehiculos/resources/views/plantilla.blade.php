@@ -10,6 +10,18 @@
         .main {
             flex: 1;
         }
+        .titles{
+            text-align: center;
+        }
+        .columnas{
+            display: flex;
+            flex-direction: column;
+        }
+        .contenedor{
+            align-content: center;
+            padding: 20px;
+            align-self: center;
+        }
     </style>
 </head>
 <body>
