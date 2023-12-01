@@ -3,7 +3,7 @@
 namespace Tests\Creacion;
 
 use Tests\TestCase;
-use App\Models\Usuario;
+use App\Models\Vehiculos;
 use Illuminate\Support\Facades\Artisan;
 
 class CreacionCarTest extends TestCase
@@ -17,24 +17,30 @@ class CreacionCarTest extends TestCase
         Artisan::call('migrate');
 
         // Crea un vehiculo de prueba
-        $vehiculo = Vehiculo::create([
-            'nombre' => 'Test User',
-            'apellidos' => 'Don Test',
-            'email' => 'test@gmail.com',
+        $vehiculo = Vehiculos::create([
+            'marca' => 'Testing',
+            'modelo' => 'Test9000',
+            'año' => '2023',
+            'dueño' => '1',
+            'precio' => '1000000',
         ]);
 
         // Agrega el vehiculo a la base de datos
-        Usuario::create([
-            'nombre' => $usuario->nombre,
-            'apellidos' => $usuario->apellidos,
-            'email' => $usuario->email,
+        Vehiculos::create([
+            'marca' => $vehiculo->marca,
+            'modelo' => $vehiculo->modelo,
+            'año' => $vehiculo->año,
+            'dueño' => $vehiculo->dueño,
+            'precio' => $vehiculo->precio,
         ]);
 
         // Se verifica que el vehiculo exista en la base de datos
-        $this->assertDatabaseHas('usuarios', [
-            'nombre' => 'Test User',
-            'apellidos' => 'Don Test',
-            'email' => 'test@gmail.com',
+        $this->assertDatabaseHas('vehiculos', [
+            'marca' => 'Testing',
+            'modelo' => 'Test9000',
+            'año' => '2023',
+            'dueño' => '1',
+            'precio' => '1000000',
         ]);
     }
 }
