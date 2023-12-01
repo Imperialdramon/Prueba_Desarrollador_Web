@@ -6,7 +6,7 @@
     <br>
     <h2 class="titles">En este apartado se puede ver, crear y modificar usuarios</h2>
     <br>
-    <form action="">
+    <form action="/create_usuario">
         <button class="btn btn-sm btn-success" style="size: 50px">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
                 <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5z"/>
@@ -17,6 +17,13 @@
     <div class="card">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
         <div class="card-body">
+            <div class="col-sm-12">
+                @if ($mensaje = Session::get('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{$mensaje}}
+                    </div>
+                @endif
+            </div>
             <div class="table table-responsive table-bordered">
                 <table class="table table-sm" style="text-align: center;">
                     <thead>

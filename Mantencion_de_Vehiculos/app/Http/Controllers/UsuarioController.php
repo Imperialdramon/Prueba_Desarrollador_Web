@@ -32,7 +32,13 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         // Con este se almacenan las cosas en la BD
-
+        $usuario = Usuario::create([
+            'nombre' => $request->post('nombre'),
+            'apellidos' => $request->post('apellidos'),
+            'email' => $request->post('email'),
+        ]);
+        // Redirección a la vista de muestra
+        return redirect()->route('usuarios.index')->with("success","Se ha agregado el usuario correctamente");
     }
 
     /**

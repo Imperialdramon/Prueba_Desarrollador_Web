@@ -70,12 +70,14 @@ Route::get('/', function () {
 
 Route::get('/usuario', [UsuarioController::class,'index'])->name('usuarios.index');
 Route::get('/create_usuario', [UsuarioController::class,'create'])->name('usuarios.create');
+Route::post('/store_usuario', [UsuarioController::class,'store'])->name('usuarios.store');
 Route::get('/edit_usuario', [UsuarioController::class,'edit'])->name('usuarios.edit');
 
 
 Route::get('/vehiculo', [VehiculosController::class,'index'])->name('vehiculos.index');
-Route::get('/Vehiculo-POST', [VehiculosController::class,'create'])->name('vehiculos.create');
-Route::get('/Vehiculo-POST', [VehiculosController::class,'edit'])->name('vehiculos.edit');
+Route::get('/create_vehiculo', [VehiculosController::class,'create'])->name('vehiculos.create');
+Route::post('/store_vehiculo', [VehiculosController::class,'store'])->name('vehiculos.store');
+Route::get('/edit_vehiculo', [VehiculosController::class,'edit'])->name('vehiculos.edit');
 
 // Se accede al historial de dueños
 Route::get('/Historial', function () {

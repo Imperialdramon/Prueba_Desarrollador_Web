@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehiculos;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class VehiculosController extends Controller
@@ -22,7 +23,8 @@ class VehiculosController extends Controller
      */
     public function create()
     {
-        // Con se crea un registro
+        // Con este se crea un registro
+        return view('Vehiculo.Crear_Vehiculo');
     }
 
     /**
@@ -30,7 +32,27 @@ class VehiculosController extends Controller
      */
     public function store(Request $request)
     {
-        // Con este se almacenan las cosas en la BD
+        // Se revisa si existe un usario con la id que se está registrando
+        $existeusuario = Usuario::where('id', $request->post('dueño'))->first();
+
+        if ($existeusuario) { // El usuario existe, entonces se agrega el vehiculo
+
+            // Con este se almacenan las cosas en la BD
+            $vehiculo = Vehiculos::create([
+                'marca' => $request->post('marca'),
+                'modelo' => $request->post('modelo'),
+                'año' => $request->post('año'),
+                'dueño' => $request->post('dueño'),
+                'precio' => $request->post('precio'),
+            ]);
+            // Redirección a la vista de muestra
+            return redirect()->route('vehiculos.index')->with("success","Se ha agregado el vehiculo correctamente");
+
+        } else { // El usuario no existe, por lo tanto no se puede agregar el vehículo
+
+            // Puedes realizar otras acciones después de agregar el usuario
+            return redirect()->route('vehiculos.index')->with("failed","No se ha podido agregar el vehículo porque el usuario no existe");
+        }
     }
 
     /**

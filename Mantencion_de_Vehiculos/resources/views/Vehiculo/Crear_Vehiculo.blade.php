@@ -1,52 +1,57 @@
-@extends('Plantilla')
+@extends('layouts/Plantilla')
 
 @section('contenido')
-
-<div class="container" style="align-content: center; padding: 20px;">
-    <h3 class="titles">En este apartado podrás registrar un vehículo</h3>
+<div class="container" style="align-content: center;">
     <br>
-    <!-- Aquí va la acción del php para recolectar datos-->
-    <form action="/">
-        <div class="container" style="justify-content: center; width: 90%;">
-            <div class="mb-3" style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div style="width: 30%;">
-                    <label for="marca-vehiculo" class="form-label negrita">Elige una marca</label>
-                    <select id="marca-vehiculo" class="form-control" required>
-                        <option value="Toyota">Toyota</option>
-                        <option value="Ford">Ford</option>
-                        <option value="BMW">BMW</option>
-                        <option value="Honda">Honda</option>
-                        <option value="Volkswagen">Volkswagen</option>
-                        <option value="Mercedes-Benz">Mercedes-Benz</option>
-                        <option value="Chevrolet">Chevrolet</option>
-                        <option value="Audi">Audi</option>
-                        <option value="Nissan">Nissan</option>
-                        <option value="Tesla">Tesla</option>
-                    </select>
+    <h2 class="titles">En este apartado se puede ver, crear y modificar usuarios</h2>
+    <br>
+    <div class="card">
+        <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
+        <form action="{{route('vehiculos.store')}}" method="POST">
+            @csrf
+            <div class="card-body">
+                <div class="table table-responsive table-bordered">
+                    <table class="table table-sm" style="text-align: center;">
+                        <thead>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Año</th>
+                            <th>Id del dueño</th>
+                            <th>Precio</th>
+                        </thead>
+                        <tr>
+                            <tbody>
+                                <td>
+                                    <input type="text" class="form-control" name="marca" rows="1" maxlength="40" placeholder="Tesla" required>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="modelo" rows="1" maxlength="40" placeholder="Model S" required>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" name="año" rows="1" max="2023" placeholder="2023" required>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" name="dueño" rows="1" max="300" placeholder="1" required>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" name="precio" rows="1" max="100000000" placeholder="10000000" required>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
+            </div>
+            <div class="container" style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div style="width: 40%;">
-                    <label for="modelo-vehiculo" class="form-label negrita">Modelo del Vehículo</label>
-                    <input type="text" class="form-control" id="modelo-vehiculo" rows="1" maxlength="40" placeholder="Model S" required>
+                    <button class="btn btn-sm btn-success">
+                        <h3>Crear Vehículo</h3>
+                    </button>
                 </div>
-                <div style="width: 20%;">
-                    <label for="year-vehiculo" class="form-label negrita">Año del Vehículo</label>
-                    <input type="number" class="form-control" id="year-vehiculo" rows="1" max="2023" placeholder="2023" required>
-                </div>
-            </div>
-            <div class="mb-3" style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div style="width: 50%;">
-                    <label for="precio-vehiculo" class="form-label negrita">Precio del Vehículo</label>
-                    <input type="number" class="form-control" id="precio-vehiculo" rows="1" max="100000000" placeholder="10000000" required>
-                </div>
-                <div style="width: 20%;">
-                    <label for="dueno-vehiculo" class="form-label negrita">Id del Dueño</label>
-                    <input type="number" class="form-control" id="dueno-vehiculo" rows="1" max="300" placeholder="1" required>
+                    <a href="{{route('vehiculos.index')}}" class="btn btn-sm btn-primary"><h3>Regresar</h3></a>
                 </div>
             </div>
-            <input type="submit" value="Crear Vehículo">
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
-
 @endsection
