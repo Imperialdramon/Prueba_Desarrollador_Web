@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,22 +61,23 @@ Route::get('/Vehiculo-DELETE', function () {
     return view('Vehiculo.Borrar_Vehiculo');
 });
 
+*/
+
+
+Route::get('/', function () {
+    return view('inicio');
+});
+
+Route::get('/usuario', [UsuarioController::class,'index'])->name('usuarios.index');
+Route::get('/create_usuario', [UsuarioController::class,'create'])->name('usuarios.create');
+Route::get('/edit_usuario', [UsuarioController::class,'edit'])->name('usuarios.edit');
+
+
+Route::get('/vehiculo', [VehiculosController::class,'index'])->name('vehiculos.index');
+Route::get('/Vehiculo-POST', [VehiculosController::class,'create'])->name('vehiculos.create');
+Route::get('/Vehiculo-POST', [VehiculosController::class,'edit'])->name('vehiculos.edit');
+
 // Se accede al historial de dueños
 Route::get('/Historial', function () {
     return view('paginas.Historial_duenos');
 });
-*/
-
-
-
-Route::get('/', [UsuarioController::class,'index'])->name('usuarios.index');
-/*
-Route::get('/create_usuario', [UsuariosController::class,'create'])->name('usuarios.create');
-Route::get('/index_usuario', [UsuariosController::class,'index'])->name('usuarios.index');
-Route::get('/create_usuario', [UsuariosController::class,'create'])->name('usuarios.create');
-Route::get('/index_usuario', [UsuariosController::class,'index'])->name('usuarios.index');
-Route::get('/create_usuario', [UsuariosController::class,'create'])->name('usuarios.create');
-
-Route::get('/Vehiculo-POST', [VehiculosController::class,'index'])->name('vehiculos.index');
-Route::get('/Vehiculo-POST', [VehiculosController::class,'create'])->name('vehiculos.create');
-*/

@@ -13,7 +13,8 @@ class VehiculosController extends Controller
     public function index()
     {
         //
-        return('Vehiculo.Crear_Vehiculo');
+        $vehiculos = Vehiculos::all();
+        return view('Vehiculos',compact('vehiculos'));
     }
 
     /**

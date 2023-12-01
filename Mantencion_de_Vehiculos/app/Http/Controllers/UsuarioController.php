@@ -23,6 +23,7 @@ class UsuarioController extends Controller
     public function create()
     {
         // Con se crea un registro
+        return view('Usuario.Crear_Usuario');
     }
 
     /**
@@ -49,7 +50,7 @@ class UsuarioController extends Controller
     public function edit(Usuario $usuario)
     {
         // Con este se puede ver los datos a actualizar y los posiciona en una vista
-
+        return view('Usuario.Actualizar_Usuario');
     }
 
     /**

@@ -28,14 +28,9 @@
 @yield('footer')
 
 <footer class="foot text-light mt-5">
-    <div class="container py-3">
-        <div class="row">
-        <div class="col-md-6">
-            <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
-        </div>
-        <div class="col-md-6 text-md-right">
-            <p>Hecho con <span class="text-danger">&hearts;</span> por <a href="https://www.tuempresa.com" class="text-light">Tu Empresa</a></p>
-        </div>
+    <div class="container py-3" style="align-items: center">
+        <div class="item" style="text-align: center">
+            <p>&copy; 2023 Pablo Estobar. Todos los derechos reservados.</p>
         </div>
     </div>
 

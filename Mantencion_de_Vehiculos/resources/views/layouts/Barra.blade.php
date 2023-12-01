@@ -33,36 +33,8 @@
 </head>
 <body>
     <nav class="nav">
-        <a class="nav-link nav-text fs-2 fw-bold"aria-current="page" href="/">Inicio</a>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-text fs-2 fw-bold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Acciones Sobre Usuario
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/Usuario-POST">Crear Usuario</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Usuario-GET">Ver Usuarios</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Usuario-UPDATE">Actualizar Usuario</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Usuario-DELETE">Eliminar Usuario</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-text fs-2 fw-bold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Acciones Sobre Vehículo
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/Vehiculo-POST">Crear Vehículo</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Vehiculo-GET">Ver Vehículos</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Vehiculo-UPDATE">Actualizar Vehículo</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Vehiculo-DELETE">Eliminar Vehículo</a></li>
-            </ul>
-        </li>
-        <a class="nav-link nav-text fs-2 fw-bold" href="/Historial">Dueños de Vehículos</a>
+        <a class="nav-link nav-text fs-2 fw-bold" href="/usuario">Usuarios</a>
+        <a class="nav-link nav-text fs-2 fw-bold" href="/vehiculo">Vehículos</a>
     </nav>
 
     @yield('barra')
