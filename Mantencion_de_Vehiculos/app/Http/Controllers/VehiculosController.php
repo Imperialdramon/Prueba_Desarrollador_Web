@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehiculos;
+use App\Models\Historial;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,11 @@ class VehiculosController extends Controller
                 'año' => $request->post('año'),
                 'dueño' => $request->post('dueño'),
                 'precio' => $request->post('precio'),
+            ]);
+            // Se agrega al historial
+            $historial = Historial::create([
+                'vehiculo' => $vehiculo->id,
+                'dueño' => $vehiculo->dueño,
             ]);
             // Redirección a la vista de muestra
             return redirect()->route('vehiculos.index')->with("success","Se ha agregado el vehiculo correctamente");
@@ -93,6 +99,12 @@ class VehiculosController extends Controller
             $vehiculo->dueño = $request->post('dueño');
             $vehiculo->precio = $request->post('precio');
             $vehiculo->save();
+
+            // Se agrega al historial
+            $historial = Historial::create([
+                'vehiculo' => $id,
+                'dueño' => $vehiculo->dueño,
+            ]);
 
             // Redirección a la vista de muestra
             return redirect()->route('vehiculos.index')->with("success","Se ha agregado el vehiculo correctamente");

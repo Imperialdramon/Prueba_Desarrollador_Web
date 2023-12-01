@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\HistorialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,4 @@ Route::get('/edit_vehiculo/{id}', [VehiculosController::class,'edit'])->name('ve
 Route::post('/update_vehiculo/{id}', [VehiculosController::class,'update'])->name('vehiculos.update');
 
 // Se accede al historial de dueños
-Route::get('/Historial', function () {
-    return view('paginas.Historial_duenos');
-});
+Route::get('/historial/{id}', [HistorialController::class,'index'])->name('historials.index');

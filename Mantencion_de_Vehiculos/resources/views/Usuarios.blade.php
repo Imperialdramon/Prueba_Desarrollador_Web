@@ -14,7 +14,7 @@
             </svg> Agregar un nuevo usuario
         </button>
     </form>
-    <div class="card">
+    <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
         <div class="card-body">
             <div class="col-sm-12">
@@ -25,7 +25,7 @@
                 @endif
             </div>
             <div class="table table-responsive table-bordered">
-                <table class="table table-sm" style="text-align: center;">
+                <table class="table table-sm" style="text-align: center">
                     <thead>
                         <th>Identificador</th>
                         <th>Nombre</th>

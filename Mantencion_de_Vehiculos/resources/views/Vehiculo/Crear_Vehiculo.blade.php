@@ -5,7 +5,7 @@
     <br>
     <h2 class="titles">En este apartado se puede ver, crear y modificar usuarios</h2>
     <br>
-    <div class="card">
+    <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
         <form action="{{route('vehiculos.store')}}" method="POST">
             @csrf
@@ -22,19 +22,19 @@
                         <tr>
                             <tbody>
                                 <td>
-                                    <input type="text" class="form-control" name="marca" rows="1" maxlength="40" placeholder="Tesla" required>
+                                    <input type="text" style="text-align: center" class="form-control" name="marca" rows="1" maxlength="40" placeholder="Tesla" required>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" name="modelo" rows="1" maxlength="40" placeholder="Model S" required>
+                                    <input type="text" style="text-align: center" class="form-control" name="modelo" rows="1" maxlength="40" placeholder="Model S" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" name="año" rows="1" max="2023" placeholder="2023" required>
+                                    <input type="number" style="text-align: center" class="form-control" name="año" rows="1" max="2023" placeholder="2023" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" name="dueño" rows="1" max="300" placeholder="1" required>
+                                    <input type="number" style="text-align: center" class="form-control" name="dueño" rows="1" max="300" placeholder="1" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" name="precio" rows="1" max="100000000" placeholder="10000000" required>
+                                    <input type="number" style="text-align: center" class="form-control" name="precio" rows="1" max="100000000" placeholder="10000000" required>
                                 </td>
                             </tr>
                         </tbody>

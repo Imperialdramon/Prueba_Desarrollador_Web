@@ -5,7 +5,7 @@
     <br>
     <h2 class="titles">En este apartado se puede modificar vehículos</h2>
     <br>
-    <div class="card">
+    <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Vehículo a modificar</h4>
         <form action="{{route('vehiculos.update',$vehiculo->id)}}" method="POST">
             @csrf
@@ -22,19 +22,19 @@
                         <tr>
                             <tbody>
                                 <td>
-                                    <input type="text" class="form-control" name="marca" rows="1" maxlength="40" value={{$vehiculo->marca}} required>
+                                    <input type="text" style="text-align: center" class="form-control" name="marca" rows="1" maxlength="40" value={{$vehiculo->marca}} required>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" name="modelo" rows="1" maxlength="40" value={{$vehiculo->modelo}} required>
+                                    <input type="text" style="text-align: center" class="form-control" name="modelo" rows="1" maxlength="40" value={{$vehiculo->modelo}} required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" name="año" rows="1" max="2023" value={{$vehiculo->año}} required>
+                                    <input type="number" style="text-align: center" class="form-control" name="año" rows="1" max="2023" value={{$vehiculo->año}} required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" name="dueño" rows="1" max="300" value={{$vehiculo->dueño}} required>
+                                    <input type="number" style="text-align: center" class="form-control" name="dueño" rows="1" max="300" value={{$vehiculo->dueño}} required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" name="precio" rows="1" max="100000000" value={{$vehiculo->precio}} required>
+                                    <input type="number" style="text-align: center" class="form-control" name="precio" rows="1" max="100000000" value={{$vehiculo->precio}} required>
                                 </td>
                             </tr>
                         </tbody>

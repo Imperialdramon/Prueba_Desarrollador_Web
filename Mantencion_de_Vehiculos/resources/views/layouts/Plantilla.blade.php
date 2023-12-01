@@ -12,6 +12,7 @@
         }
         .titles{
             text-align: center;
+            color: rgb(27, 124, 240 );
         }
         .negrita{
             font-weight: bold;

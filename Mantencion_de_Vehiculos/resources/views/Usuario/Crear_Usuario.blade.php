@@ -5,7 +5,7 @@
     <br>
     <h2 class="titles">En este apartado se puede crear usuarios</h2>
     <br>
-    <div class="card">
+    <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
         <form action="{{route('usuarios.store')}}" method="POST">
             @csrf
@@ -20,13 +20,13 @@
                         <tr>
                             <tbody>
                                 <td>
-                                    <input type="text" class="form-control" name="nombre" rows="1" maxlength="30" placeholder="Juan" required>
+                                    <input type="text" style="text-align: center" class="form-control" name="nombre" rows="1" maxlength="30" placeholder="Juan" required>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" name="apellidos" rows="1" maxlength="70" placeholder="Perez Perez" required>
+                                    <input type="text" style="text-align: center" class="form-control" name="apellidos" rows="1" maxlength="70" placeholder="Perez Perez" required>
                                 </td>
                                 <td>
-                                    <input type="email" class="form-control" name="email" placeholder="juan@example.com" required>
+                                    <input type="email" style="text-align: center" class="form-control" name="email" placeholder="juan@example.com" required>
                                 </td>
                             </tr>
                         </tbody>

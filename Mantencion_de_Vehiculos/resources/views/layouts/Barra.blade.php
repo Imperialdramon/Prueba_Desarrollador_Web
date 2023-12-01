@@ -21,11 +21,10 @@
         }
         .nav{
             padding: 10px;
-            background-color: rgb(96, 220, 112);
+            background-color: rgb(31, 184, 222);
             border-color: cornflowerblue;
         }
         .nav-text{
-            color: rgb(57, 137, 47);
             border-color: black;
             border-width: 5px;
         }
@@ -33,6 +32,7 @@
 </head>
 <body>
     <nav class="nav">
+        <a class="nav-link nav-text fs-2 fw-bold" href="/">Inicio</a>
         <a class="nav-link nav-text fs-2 fw-bold" href="/usuario">Usuarios</a>
         <a class="nav-link nav-text fs-2 fw-bold" href="/vehiculo">Vehículos</a>
     </nav>

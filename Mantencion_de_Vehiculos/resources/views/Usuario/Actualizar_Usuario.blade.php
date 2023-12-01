@@ -6,7 +6,7 @@
     <br>
     <h2 class="titles">En este apartado se puede modificar usuarios</h2>
     <br>
-    <div class="card">
+    <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Usuario a modificar</h4>
         <form action="{{route('usuarios.update',$usuario->id)}}" method="POST">
             @csrf
@@ -21,13 +21,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control" name="nombre" rows="1" maxlength="30" value={{$usuario->nombre}} required>
+                                    <input type="text" style="text-align: center" class="form-control" name="nombre" rows="1" maxlength="30" value={{$usuario->nombre}} required>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" name="apellidos" rows="1" maxlength="70" value={{$usuario->apellidos}} required>
+                                    <input type="text" style="text-align: center" class="form-control" name="apellidos" rows="1" maxlength="70" value={{$usuario->apellidos}} required>
                                 </td>
                                 <td>
-                                    <input type="email" class="form-control" name="email" value={{$usuario->email}} required>
+                                    <input type="email" style="text-align: center" class="form-control" name="email" value={{$usuario->email}} required>
                                 </td>
                                 </tr>
                         </tbody>
