@@ -4,6 +4,7 @@ Este proyecto es para la postulación a una práctica, en el cuál se utiliza en
 - XAMPP v3.3.0
 - Composer v2.6.5
 - PHP v8.1 o superior
+- phpunit v10.4 o superior (desde el composer)
 
 La pagina web es desarrollada con "html + bootstrap" con algunas funcionalidades de modularización de laravel, para la barra de navegación y el pie de página. A continuación se presenta la información relevante sobre las componentes de la tabla:
 
