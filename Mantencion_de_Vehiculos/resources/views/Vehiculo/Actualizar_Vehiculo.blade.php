@@ -7,6 +7,7 @@
     <br>
     <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Vehículo a modificar</h4>
+        <!--Se realiza la actualización que luego redirecciona a la vista anterior-->
         <form action="{{route('vehiculos.update',$vehiculo->id)}}" method="POST">
             @csrf
             <div class="card-body">
@@ -20,6 +21,7 @@
                             <th>Precio</th>
                         </thead>
                         <tr>
+                            <!--Se muestran los datos a modificar como valor ya posicionado para poder editar viendo los datos actuales-->
                             <tbody>
                                 <td>
                                     <input type="text" style="text-align: center" class="form-control" name="marca" rows="1" maxlength="40" value={{$vehiculo->marca}} required>
@@ -48,6 +50,7 @@
                     </button>
                 </div>
                 <div style="width: 50%;">
+                    <!--Redireccionamiento a la vista anterior-->
                     <a href="{{route('vehiculos.index')}}" class="btn btn-sm btn-primary"><h3>Regresar</h3></a>
                 </div>
             </div>

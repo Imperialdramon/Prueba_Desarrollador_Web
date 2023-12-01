@@ -15,6 +15,7 @@
                         <th>Identificador del dueño</th>
                     </thead>
                     <tbody>
+                        <!--Se recorre la lista del historial retornado para generar la vista-->
                         @foreach ($historial as $item)
                         <tr>
                             <td>{{$item->id}}</td>
@@ -27,6 +28,7 @@
             </div>
         </div>
     </div>
+    <!--Redireccionamiento a la vista anterior-->
     <a href="{{route('vehiculos.index')}}" class="btn btn-sm btn-primary"><h3>Regresar</h3></a>
 </div>
 @endsection

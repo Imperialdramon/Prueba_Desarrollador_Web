@@ -6,6 +6,7 @@
     <br>
     <h2 class="titles">En este apartado se puede ver, crear y modificar usuarios</h2>
     <br>
+    <!--Se redirecciona a la creación de usuarios-->
     <form action="/create_usuario">
         <button class="btn btn-sm btn-success" style="size: 50px">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
@@ -17,6 +18,7 @@
     <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
         <div class="card-body">
+            <!--Se verifica si se devolvió un mensaje de estado de la vista de creacón o actualización-->
             <div class="col-sm-12">
                 @if ($mensaje = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -34,6 +36,7 @@
                         <th>Modificar usuario</th>
                     </thead>
                     <tbody>
+                        <!--Se recorre la lista de usuarios retornado para generar la vista-->
                     @foreach ($usuarios as $item)
                         <tr>
                             <td>{{$item->id}}</td>
@@ -41,6 +44,7 @@
                             <td>{{$item->apellidos}}</td>
                             <td>{{$item->email}}</td>
                             <td>
+                                <!--Se realiza la consulta de modificación que luego redirecciona a la vista de actualización-->
                                 <form action="{{route('usuarios.edit',$item->id)}}" method="GET">
                                     <button class="btn btn-sm btn-warning" style="height: 35px">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">

@@ -7,6 +7,7 @@
     <br>
     <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>
+        <!--Se realiza la publicación que luego redirecciona a la vista anterior-->
         <form action="{{route('vehiculos.store')}}" method="POST">
             @csrf
             <div class="card-body">
@@ -48,6 +49,7 @@
                     </button>
                 </div>
                 <div style="width: 50%;">
+                    <!--Redireccionamiento a la vista anterior-->
                     <a href="{{route('vehiculos.index')}}" class="btn btn-sm btn-primary"><h3>Regresar</h3></a>
                 </div>
             </div>

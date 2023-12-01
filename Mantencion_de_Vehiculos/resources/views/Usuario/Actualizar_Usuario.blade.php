@@ -8,6 +8,7 @@
     <br>
     <div class="card" style="background-color:rgb(202, 223, 248)">
         <h4 class="card-header" style="text-align: center;">Usuario a modificar</h4>
+        <!--Se realiza la actualización que luego redirecciona a la vista anterior-->
         <form action="{{route('usuarios.update',$usuario->id)}}" method="POST">
             @csrf
             <div class="card-body">
@@ -18,6 +19,7 @@
                             <th><h5>Apellidos</h5></th>
                             <th><h5>Correo de contacto</h5></th>
                         </thead>
+                        <!--Se muestran los datos a modificar como valor ya posicionado para poder editar viendo los datos actuales-->
                         <tbody>
                             <tr>
                                 <td>
@@ -41,6 +43,7 @@
                     </button>
                 </div>
                 <div style="width: 50%;">
+                    <!--Redireccionamiento a la vista anterior-->
                     <a href="{{route('usuarios.index')}}" class="btn btn-sm btn-primary"><h3>Regresar</h3></a>
                 </div>
             </div>

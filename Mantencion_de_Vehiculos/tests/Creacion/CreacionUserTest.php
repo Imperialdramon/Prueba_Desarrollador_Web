@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Artisan;
 
 class CreacionUserTest extends TestCase
 {
-    //use RefreshDatabase;
-
     // Prueba de creación de usuario
     public function test_CrearUsuario(): void
     {

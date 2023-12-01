@@ -6,6 +6,7 @@
     <br>
     <h2 class="titles">En este apartado se puede ver, crear y modificar vehículos</h2>
     <br>
+    <!--Se redirecciona a la creación de vehículos-->
     <form action="/create_vehiculo">
         <button class="btn btn-sm btn-success" style="size: 50px">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
@@ -18,6 +19,7 @@
         <h4 class="card-header" style="text-align: center;">Listado de vehículos actuales del sistema</h4>
         <div class="card-body">
             <div class="col-sm-12">
+                <!--Se verifica si se devolvió un mensaje de estado de la vista de creacón o actualización-->
                 @if ($mensaje = Session::get('success'))
                     <div class="alert alert-success" role="alert">
                         {{$mensaje}}
@@ -41,6 +43,7 @@
                         <th>Modificar vehículo</th>
                     </thead>
                     <tbody>
+                        <!--Se recorre la lista de vehiculos retornado para generar la vista-->
                     @foreach ($vehiculos as $item)
                         <tr>
                             <td>{{$item->id}}</td>
@@ -50,6 +53,7 @@
                             <td>{{$item->dueño}}</td>
                             <td>{{$item->precio}}</td>
                             <td>
+                                <!--Se realiza la consulta de historial que luego redirecciona a la vista de historial-->
                                 <form action="{{route('historials.index',$item->id)}}" method="GET">
                                     <button class="btn btn-sm btn-primary" style="height: 35px">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -59,6 +63,7 @@
                                 </form>
                             </td>
                             <td>
+                                <!--Se realiza la consulta de modificación que luego redirecciona a la vista de actualización-->
                                 <form action="{{route('vehiculos.edit',$item->id)}}" method="GET">
                                     <button class="btn btn-sm btn-warning" style="height: 35px">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
