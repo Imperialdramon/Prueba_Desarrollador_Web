@@ -6,7 +6,7 @@ Este proyecto es para la postulación a una práctica, en el cuál se utiliza en
 - PHP v8.1 o superior
 - phpunit v10.4 o superior (desde el composer)
 
-La pagina web es desarrollada con "html + bootstrap" con algunas funcionalidades de modularización de laravel, para la barra de navegación y el pie de página. A continuación se presenta la información relevante sobre las componentes de la tabla:
+La pagina web es desarrollada con "html + bootstrap" con algunas funcionalidades de modularización de laravel, para la barra de navegación y el pie de página. A continuación se presenta la información relevante sobre las componentes de cada CRUD.
 
 ## Operaciones del CRUD para Usuario
 
@@ -64,9 +64,14 @@ En la siguiente tabla se presentan las operaciones del CRUD respecto al vehícul
   </tbody>
 </table>
 
+## Test unitarios
+Para esta prueba se han realizado dos tipos de test básicos, que consisten en pruebas aisladas, en base de datos en memoria donde se comprueba su existe un dato recientemente añadido a la base de datos. Estos se encuentra en el path "test/Creacion", donde se tiene las pruebas separadas para la creación de usuarios y de vehiculos.
+
+Además, cabe mencionar que para probar los test se ha utilizado "php artisan test" desde la carpeta "Mantencion_de_Vehiculos".
+
 ## Consideraciones adicionales
+- No se ha desarrollado la eliminación de datos para esta prueba.
 - Para manejar el registro de los anteriores dueños, se empleó el uso de una tercera tabla que utiliza las id de los vehículos y dueños además de una propia.
-- Los test unitarios presentados actualmente presentan errores, por lo que no es recomendable utilizarlos.
-- Para lograr realizar la ejecución correcta, es necesario migrar las tablas. Esto se logra con el comando "php artisan migrate", donde además se debe definir la conexión con la base de datos creada (en mi caso con XAMPP).
+- Para lograr realizar la ejecución correcta, es necesario migrar las tablas a la base de datos a utilizar. Esto se logra con el comando "php artisan migrate", donde además se debe definir la conexión con la base de datos creada (en mi caso con XAMPP).
+- La mayor parte de las vistas, están desarrolladas aprovechando la posibilidad de modularización de laravel, pero con diseños muy básicos y en ocasiones no se logra optimizar esto (un buen cambio habría sido definir correctamente los archivos CSS para los estilos utilizados).
 - Para visualizar la base de datos, se ha utilizado MySQL Workbench, con el fin de hacer un seguimiento más directo sobre los datos y revisar su correcto almacenamiento.
-- La mayor parte de las "páginas", están desarrolladas aprovechando la posibilidad de modularización de laravel, pero con diseños muy básicos y en ocasiones no se logra optimizar esto (un buen cambio habría sido definir correctamente los archivos CSS).
