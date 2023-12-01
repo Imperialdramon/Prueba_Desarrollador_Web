@@ -16,68 +16,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*
-// Se accede a la ruta de Inicio
+
 //Route::get('/', function () {
 //    return view('Usuarios');
 //});
-
-// Se accede a la creación de usuarios
-//Route::get('/Usuario-POST', function () {
-//    return view('Usuario.Crear_Usuario');
-//});
-
-// Se accede a la actualización de usuarios
-Route::get('/Usuario-UPDATE', function () {
-    return view('Usuario.Actualizar_Usuario');
-});
-
-// Se accede a la obtención de usuarios
-Route::get('/Usuario-GET', function () {
-    return view('Usuario.Ver_Usuarios');
-});
-
-// Se accede a la eliminación de usuarios
-Route::get('/Usuario-DELETE', function () {
-    return view('Usuario.Borrar_Usuario');
-});
-
-// Se accede a la creación de vehiculos
-//Route::get('/Vehiculo-POST', function () {
-//    return view('Vehiculo.Crear_Vehiculo');
-//});
-
-// Se accede a la actualización de vehiculos
-Route::get('/Vehiculo-UPDATE', function () {
-    return view('Vehiculo.Actualizar_Vehiculo');
-});
-
-// Se accede a la obtención de vehiculos
-Route::get('/Vehiculo-GET', function () {
-    return view('Vehiculo.Ver_Vehiculos');
-});
-
-// Se accede a la eliminación de vehiculos
-Route::get('/Vehiculo-DELETE', function () {
-    return view('Vehiculo.Borrar_Vehiculo');
-});
-
 */
 
-
+// Se accede a la ruta de Inicio
 Route::get('/', function () {
     return view('inicio');
 });
 
+// Rutas relativas al controlador de usuario
 Route::get('/usuario', [UsuarioController::class,'index'])->name('usuarios.index');
 Route::get('/create_usuario', [UsuarioController::class,'create'])->name('usuarios.create');
 Route::post('/store_usuario', [UsuarioController::class,'store'])->name('usuarios.store');
-Route::get('/edit_usuario', [UsuarioController::class,'edit'])->name('usuarios.edit');
+Route::get('/edit_usuario/{id}', [UsuarioController::class,'edit'])->name('usuarios.edit');
+Route::post('/update_usuario/{id}', [UsuarioController::class,'update'])->name('usuarios.update');
 
-
+// Rutas relativas al controlador de vehiculo
 Route::get('/vehiculo', [VehiculosController::class,'index'])->name('vehiculos.index');
 Route::get('/create_vehiculo', [VehiculosController::class,'create'])->name('vehiculos.create');
 Route::post('/store_vehiculo', [VehiculosController::class,'store'])->name('vehiculos.store');
-Route::get('/edit_vehiculo', [VehiculosController::class,'edit'])->name('vehiculos.edit');
+Route::get('/edit_vehiculo/{id}', [VehiculosController::class,'edit'])->name('vehiculos.edit');
+Route::post('/update_vehiculo/{id}', [VehiculosController::class,'update'])->name('vehiculos.update');
 
 // Se accede al historial de dueños
 Route::get('/Historial', function () {

@@ -53,19 +53,26 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Usuario $usuario)
+    public function edit($id)
     {
         // Con este se puede ver los datos a actualizar y los posiciona en una vista
-        return view('Usuario.Actualizar_Usuario');
+        $usuario = Usuario::find($id);
+        return view('Usuario.Actualizar_Usuario',compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, $id)
     {
         // Con este se puede actualizar un registro de la BD
-
+        $usuario = Usuario::find($id);
+        $usuario->nombre = $request->post('nombre');
+        $usuario->apellidos = $request->post('apellidos');
+        $usuario->email = $request->post('email');
+        $usuario->save();
+        // Redirección a la vista de muestra
+        return redirect()->route('usuarios.index')->with("success","Se ha actualizado el usuario correctamente");
     }
 
     /**

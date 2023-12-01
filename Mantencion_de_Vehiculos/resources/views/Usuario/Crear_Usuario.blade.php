@@ -3,7 +3,7 @@
 @section('contenido')
 <div class="container" style="align-content: center;">
     <br>
-    <h2 class="titles">En este apartado se puede ver, crear y modificar usuarios</h2>
+    <h2 class="titles">En este apartado se puede crear usuarios</h2>
     <br>
     <div class="card">
         <h4 class="card-header" style="text-align: center;">Listado de usuarios actuales del sistema</h4>

@@ -32,7 +32,7 @@ class VehiculosController extends Controller
      */
     public function store(Request $request)
     {
-        // Se revisa si existe un usario con la id que se está registrando
+        // Se revisa si existe un usuario con la id que se está registrando
         $existeusuario = Usuario::where('id', $request->post('dueño'))->first();
 
         if ($existeusuario) { // El usuario existe, entonces se agrega el vehiculo
@@ -66,17 +66,41 @@ class VehiculosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Vehiculos $vehiculos)
+    public function edit($id)
     {
         // Con este se puede ver los datos a actualizar y los posiciona en una vista
+        $vehiculo = Vehiculos::find($id);
+        return view('Vehiculo.Actualizar_Vehiculo',compact('vehiculo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Vehiculos $vehiculos)
+    public function update(Request $request, $id)
     {
         // Con este se puede actualizar un registro de la BD
+
+        // Se revisa si existe un usuario con la id que se está registrando
+        $existeusuario = Usuario::where('id', $request->post('dueño'))->first();
+
+        if ($existeusuario) { // El usuario existe, entonces se agrega el vehiculo
+
+            // Se modifica el vehiculo
+            $vehiculo = Vehiculos::find($id);
+            $vehiculo->marca = $request->post('marca');
+            $vehiculo->modelo = $request->post('modelo');
+            $vehiculo->año = $request->post('año');
+            $vehiculo->dueño = $request->post('dueño');
+            $vehiculo->precio = $request->post('precio');
+            $vehiculo->save();
+
+            // Redirección a la vista de muestra
+            return redirect()->route('vehiculos.index')->with("success","Se ha agregado el vehiculo correctamente");
+
+        } else { // El usuario no existe, por lo tanto no se puede modificar el vehículo
+
+            return redirect()->route('vehiculos.index')->with("failed","No se ha podido modificar el vehículo porque el usuario no existe");
+        }
     }
 
     /**
